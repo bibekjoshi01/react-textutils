@@ -1,4 +1,6 @@
+
 {
+  "homepage": "https://bibekjoshi01.github.io/react-textutils",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -34,6 +36,9 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "main -b master -d build"
   }
+  
 }
