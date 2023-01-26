@@ -14,7 +14,8 @@ function App() {
   const [myStyle, setMyStyle] = useState({
     color: '#050726',
     backgroundColor: 'white',
-    border: '1px solid #050726'
+    border: '1px solid #050726',
+    userSelect: 'none', 
   });
 
   const [btnStyle, setBtnStyle] = useState({
@@ -66,11 +67,26 @@ function App() {
     <Router>
     <Navbar title="TextUtils" mode={mode} modetext={modetext} toggleMode={toggleMode}/>
     <div className="container my-3">
-      {/* <Routes> */}
-        <Route path="/" exact render={() => <TextForm heading="Enter the text below to analyze" toggleMode={toggleMode} myStyle={myStyle} btnStyle={btnStyle} btnText={btnText} />} />
-        <Route path="/about" render={() => <About mode={mode} />} />
-      {/* </Routes> */}
-    {/* <TextForm heading="Enter the text" toggleMotitle="TextUtils" mode={mode} modetext={modetext} toggleMode={toggleMode}de={toggleMode} myStyle={myStyle} btnStyle={btnStyle} btnText={btnText}/> */}
+        <Routes>
+          <Route path="/" element={
+            <TextForm 
+              heading="Enter the text" 
+              toggleMotitle="TextUtils" 
+              mode={mode} 
+              modetext={modetext} 
+              toggleMode={toggleMode} 
+              myStyle={myStyle} 
+              btnStyle={btnStyle} 
+              btnText={btnText} 
+            />}>
+          </Route>
+          <Route path="/about" element={
+            <About 
+              mode={mode} 
+              myStyle={myStyle} 
+            />}>
+          </Route>
+        </Routes>
     </div>
     </Router>
   );
